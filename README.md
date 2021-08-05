@@ -2,7 +2,7 @@
 [![Build Status - GitHub](https://github.com/OnGridSystems/erc20_airdrop_cli/workflows/airdrop_pytest/badge.svg)](https://github.com/OnGridSystems/erc20_airdrop_cli/actions?query=workflow%3Aairdrop_pytest)
 
 
-# Simple CLI app for ERC-20 Airdrops on Ethereum
+# Simple CLI app for BEP-20 Airdrops on Binance
 
 Allows controllable ERC-20/BEP-20 token airdrops by the given list of recipients and amounts. Simplifies control of sending and eliminates human mistakes. The process of airdrop looks like this:
 
