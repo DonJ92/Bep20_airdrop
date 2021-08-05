@@ -35,8 +35,9 @@ To show current status ```./airdrop.py show```.
 
 1. ```./airdrop.py init``` to initialize database - creates SQLite fine in the directory
 2. ```./airdrop.py import``` to set sender's private key
-3. ```./airdrop.py token <token-address> ``` to set token address for airdrop.
-4. ```./airdrop.py update``` to update balances and current account's nonce. You can run it anytime.
+3. ```./airdrop.py caribmars_token <token-address> ``` to set caribmars token address for airdrop.
+4. ```./airdrop.py token <token-address> ``` to set token address for airdrop.
+5. ```./airdrop.py update``` to update balances and current account's nonce. You can run it anytime.
 
 5. Add recipietns for airdrop, one recipient per command. Amounts are in decimal format. If you specify 1.49, it means you'll send 1490000000000000000 of token units (decimals=18 assumed).
 
