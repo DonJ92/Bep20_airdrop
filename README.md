@@ -40,16 +40,16 @@ To show current status ```./airdrop.py show```.
 5. ```./airdrop.py update``` to update balances and current account's nonce. You can run it anytime.
 6. ```./airdrop.py get_holder``` get caribmars token holder address list and balance after set caribmars token address.
 
-6. Add recipietns for airdrop, one recipient per command. Amounts are in decimal format. If you specify 1.49, it means you'll send 1490000000000000000 of token units (decimals=18 assumed).
+7. Add recipietns for airdrop, one recipient per command. Amounts are in decimal format. If you specify 1.49, it means you'll send 1490000000000000000 of token units (decimals=18 assumed).
 
 ```./airdrop.py add <address> <amount>```  
 
 
-7. Sign **all** your transactions ```./airdrop.py sign```  
+8. Sign **all** your transactions ```./airdrop.py sign```  
 
-8. Send transactions on the wire, one at a time ```./airdrop.py sign``` - sends **first** SIGNED transaction and it becomes SENT. And now you can check transaction hash in show menu.
+9. Send transactions on the wire, one at a time ```./airdrop.py sign``` - sends **first** SIGNED transaction and it becomes SENT. And now you can check transaction hash in show menu.
 
-9. If the execution was interrupted and the receipt was not received. You can request it:
+10. If the execution was interrupted and the receipt was not received. You can request it:
 ```./airdrop.py receipt```
 
 
