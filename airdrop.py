@@ -69,8 +69,17 @@ def get_holder():
 
     token_contract = w3.eth.contract(address=Web3.toChecksumAddress(config.caribmars_token), abi=bep20_abi)
     try:
-        owner_list = token_contract.functions.getHolders().call()
-        print(f"{owner_list}")
+        holder_addr_list = token_contract.functions.getHolders().call()
+        holder_list = []
+        count = 0;
+        for holder_addr in holder_addr_list:
+            balance = token_contract.functions.balanceOf(holder_addr).call()
+            holder_list.append([holder_addr, balance])
+        print(f'{holder_list}')
+
+        for holder_info in holder_list:
+            add_recepient(holder_info[0], holder_info[1] / 10**9)
+            
     except BadFunctionCallOutput:
         print("Error. Can't get CaribMars Holder List")
         return
@@ -140,6 +149,7 @@ def show():
     print(f"Sender address: {config.address}")
     print(f"Sender BNB balance: {config.eth_balance} Wei")
     print(f"Token address: {config.token}")
+    print(f"Caribmars Token address: {config.caribmars_token}")
     print(f"Token balance:  {config.token_balance} Wei")
     print(f"Sender nonce: {config.current_nonce}")
     print(f"Web3 endpoint: {config.web3_node}")
@@ -169,7 +179,7 @@ def add_recepient(recipient_address, amount):
         return
     try:
         float(amount)
-        assert float(amount) * 10**18 >= 1
+        assert float(amount) * 10**9 >= 1
     except ValueError:
         print('Wrong amount')
         return
@@ -264,10 +274,10 @@ def send():
     config.current_nonce += 1
     config.save()
 
-    sending_tx.tx_receipt = get_tx_receipt(config.web3_node, tx_hash)
-    sending_tx.status = "MINED"
-    sending_tx.save()
-    print('Tx was successfully mined!')
+    #sending_tx.tx_receipt = get_tx_receipt(config.web3_node, tx_hash)
+    #sending_tx.status = "MINED"
+    #sending_tx.save()
+    #print('Tx was successfully mined!')
     send()
 
 
